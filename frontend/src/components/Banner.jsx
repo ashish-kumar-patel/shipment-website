@@ -14,7 +14,7 @@ const Banner = () => {
             </div>
 
             {/* input */}
-            <div className='bg-white w-[370px] h-[160px] shadow-sm flex flex-col gap-3 justify-center items-center' >
+            <div className='bg-white w-[370px]  shadow-sm flex flex-col gap-3 justify-center items-center' >
                 <div className='relative'>
                     <input className='bg-white border border-gray-300 w-[330px] pl-10 h-10 placeholder:text-md p-2'
                         placeholder='Enter your tracking id..' />
