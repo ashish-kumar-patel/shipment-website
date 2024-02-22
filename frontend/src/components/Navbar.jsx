@@ -21,12 +21,12 @@ const Navbar = () => {
     }, [prevScrollPos, visible]);
     
     return (
-        <nav className={`bg-[#f1f1f1] w-full  h-24 flex items-center fixed top-[22px]  transition-transform duration-300 ${visible ? '' : '-translate-y-full'}`}>
-            <div className='flex justify-between w-full px-20'>
-                <span className='text-lg font-semibold'>
+        <nav className={`bg-[#f1f1f1] w-full  h-24 flex items-center fixed top-[22px]   z-50  opacity-95  transition-transform duration-300 ${visible ? '' : '-translate-y-full'}`}>
+            <div className='flex justify-between w-full px-20  '>
+                <span className='text-lg font-semibold '>
                     <h3>BomBino</h3>
                 </span>
-                <div className='flex gap-12 text-md items-center w-auto text-gray-500 '>
+                <div className='flex gap-12 text-md items-center w-auto text-gray-500  '>
                     {['Home', 'Track Package', 'About us', 'Service', 'Resources'].map((linkText, index) => (
                         <div key={index} className='hover:text-black'>{linkText}</div>
                     ))}
