@@ -26,10 +26,6 @@ const FAQ = () => {
     },
   ]; 
 
-
-  
-    
-
      const [activeFaq, setActiveFaq] = useState(null);
 
   const handleToggle = useCallback((index) => {
