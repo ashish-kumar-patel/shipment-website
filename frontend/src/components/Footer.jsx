@@ -3,8 +3,8 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import FooterImage1 from "./FooterImage1.png"
-import FooterImage2 from "./FooterImage2.png"
+import FooterImage1 from "../assets/FooterImage1.png"
+import FooterImage2 from "../assets/FooterImage2.png"
 
 const Footer = () => {
 
