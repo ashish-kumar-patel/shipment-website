@@ -37,28 +37,28 @@ const FAQ = () => {
   }, [activeFaq]);
 
   return (
-    <div className="">
-      <div className="container px-4  py-40  mx-auto">
-        <h1 className="text-4xl font-bold  mb-16 justify-center flex  text-[#011F61]">Frequently Asked Questions</h1>
-        <div className="grid grid-cols-1 gap-11">
-          {faqs.map((faq, index) => (
-            <React.Fragment key={index}>
-              <div className=" rounded-2xl   pt-4 mx-56 px-14 shadow-2xl drop-shadow-2xl ">
-                <details className="mb-4 ">
-                  <summary className="flex items-center justify-between cursor-pointer  " onClick={() => handleToggle(index)}>
-                    <h2 className="text-xl font-semibold text-[#011F61] ">{faq.question}</h2>
-                    <HiChevronDown className={`text-3xl transform transition-transform duration-300 ease-in-out ${activeFaq === index ? 'rotate-180' : ''}`} />
-                  </summary>
-                  {activeFaq === index && (
-                    <p className="mt-4 text-gray-700  pr-28">{faq.answer}</p>
-                  )}
-                </details>
-              </div>
-            </React.Fragment>
-          ))}
-        </div>
+    <div className="min-h-screen bg-gray-100">
+    <div className="container mx-auto px-4 py-16">
+      <h1 className="text-4xl font-bold mb-16 text-center text-[#011F61]">Frequently Asked Questions</h1>
+      <div className="grid grid-cols-1 gap-11   lg:mx-44">
+        {faqs.map((faq, index) => (
+          <React.Fragment key={index}>
+            <div className="bg-white rounded-2xl p-4 shadow-2xl drop-shadow-2xl">
+              <details className="mb-3 mt-1">
+                <summary className="flex items-center justify-between cursor-pointer" onClick={()=>handleToggle(index)}>
+                  <h2 className="text-xl font-semibold text-[#011F61]">{faq.question}</h2>
+                  <HiChevronDown className={`text-3xl transform transition-transform duration-300 ease-in-out ${activeFaq === index ? 'rotate-180' : ''}`} />
+                </summary>
+                {activeFaq === index && (
+                  <p className="mt-4 text-gray-700">{faq.answer}</p>
+                )}
+              </details>
+            </div>
+          </React.Fragment>
+        ))}
       </div>
     </div>
+  </div>
   );
 };
 

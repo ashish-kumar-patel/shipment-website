@@ -64,7 +64,7 @@ function Contact() {
             We will get back to you as soon as we can.
           </p>
         </div>
-        <div className="w-full md:w-1/2 lg:w-2/5  min-w-96   max-w-lg   bg-white rounded-xl shadow-2xl shadow-black drop-shadow-xl px-10 py-10">
+        <div className="w-full md:w-1/2 lg:w-2/5   min-w-80  max-w-lg   bg-white rounded-xl shadow-2xl shadow-black drop-shadow-xl px-10 py-10">
           <form className=" space-y-5">
             <h5 className="text-2xl font-bold text-[#011F61]">
               Send us a message
