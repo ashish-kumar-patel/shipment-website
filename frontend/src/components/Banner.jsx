@@ -4,7 +4,7 @@ import containerImage from '../assets/Screenshot_2024-02-15_165957-removebg-prev
 
 const Banner = () => {
     return (
-        <div className='w-1/2 flex flex-col pt-[160px] px-20 gap-10'>
+        <div className='w-1/2  pt-[160px] px-20 gap-10 h-screen overflow-hidden'>
             <div className='text-gray-500 leading-tight text-6xl '>
                 <h1>Where
                     <span className='text-black font-bold'> Quality </span> and <br />
@@ -24,7 +24,7 @@ const Banner = () => {
                 <button className='w-[330px] h-10 bg-[#5b7c5b] text-white'>Track your shipment</button>
             </div>
 
-            <img src={containerImage} alt="container image"  className="absolute w-[730px] left-[790px] top-[150px]" />
+            <img src={containerImage} alt="container image"  className=" lg:absolute w-[730px] left-[790px] top-[150px]" />
         </div>
     )
 }
