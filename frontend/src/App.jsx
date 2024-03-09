@@ -10,8 +10,7 @@ function App() {
   return (
     <div className="flex flex-col w-full   bg-[#f1f1f1]">
       <PhoneNumber/>
-      <Navbar />
-      <Banner />
+      <Navbar />      
       <GetRate/>
       <FAQ/>
       <Contact/>
