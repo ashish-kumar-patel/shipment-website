@@ -3,13 +3,48 @@ import curve from "../assets/curve.png";
 import shopping from "../assets/shopping.png";
 import aeroplane from "../assets/aeroplane.png";
 import { MdLocationOn } from "react-icons/md";
-import Homedesign from "./Design/Banner";
+import Homedesign from "./Design/Banner.jsx"
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function Home() {
+  const HandleReset = (e) => {
+    e.preventDefault();
+  };
+  const HandleGetRate = (e) => {
+    e.preventDefault();
+  };
+
+  useGSAP(() => {
+    gsap.to("#hero", {
+      opacity: 1,
+      delay: 0.5,
+      y: 20,
+    });
+    gsap.to(".animate", {
+      opacity: 1,
+      delay: 1,
+      y: -20,
+    });
+    gsap.to(".form", {
+      opacity: 1,
+      delay: 2,
+      y: -20,
+    });
+    gsap.to(".plane", {
+      opacity: 1,
+      delay: 1.5,
+      x: 40,
+    });
+  }, []);
+
   return (
     <div className="  bg-black  h-auto w-screen overflow-hidden  md:pt-[10rem]  pt-28 text-white ">
       <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[1.875rem] md:mb-20 lg:mb-[3.25rem] ">
-        <h1 className=" text-[2.5rem]  md:text-[2.75rem]  lg:text-[3.25rem] xl:text-[3.75rem]     mb-6 font-[700] mx-4  leading-[3.25rem] lg:leading-[4.5rem]">
+        <h1
+          id="hero"
+          className=" text-[2.5rem]  opacity-0 md:text-[2.75rem]  lg:text-[3.25rem] xl:text-[3.75rem]     mb-20 font-[700] mx-4  leading-[3.25rem] lg:leading-[4.5rem]"
+        >
           Where Quality and Security Converge for {` `}
           <span className="inline-block relative">
             Peace of Mind{" "}
@@ -22,13 +57,15 @@ function Home() {
             />
           </span>
         </h1>
-        <p className="max-w-3xl mx-6 mb-10 text-lg md:text-xl lg:text-2xl md:mx-auto  text-n-2 lg:mb-8 text-[0.875rem] md:text-[1rem]  lg:text-[1.25rem]  leading-[1.5rem] md:leading-[2rem]   ">
-          Unleash the power of AI within Brainwave. Upgrade your productivity
-          with Brainwave, the open AI chat app.
+        <p
+          id="cdn"
+          className="max-w-3xl mx-6 mb-10 animate text-lg md:text-xl mt-10  opacity-0 lg:text-2xl md:mx-auto  text-n-2 lg:mb-8 text-[0.875rem] md:text-[1rem]  lg:text-[1.25rem]  leading-[1.5rem] md:leading-[2rem]   "
+        >
+         The purpose of life is a philosophical question that seeks to understand the reason for existence and the direction of human life.
         </p>
       </div>
 
-      <div className="  shadow-sm flex flex-col gap-3 justify-center items-center  pb-16 md:pb-24">
+      <div className=" animate opacity-0 shadow-sm flex flex-col gap-3 justify-center items-center  pb-16 md:pb-24">
         <div className=" relative">
           <input
             className=" border border-gray-300 w-[330px] pl-10 h-10 placeholder:text-md p-2 text-black
@@ -45,15 +82,18 @@ function Home() {
           Track your shipment
         </button>
       </div>
-      
-      <Homedesign />
 
-            {/* form section */}
+      <div className=" plane opacity-0">
+        <Homedesign />
+      </div>
 
-      <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24 mb-9">
+      {/* form section */}
+
+      <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24 mb-9 form opacity-0">
         <div className="relative z-1 min-h-[490px] p-0.5 rounded-2xl  bg-gradient-conic from-90deg via-180deg to-270deg bg-gradient-to-br from-pink-500 via-cyan-500 to-purple-500  ">
           <div className="relative  bg-black rounded-[1rem]  min-h-[490px]">
             <div className="h-[1.6rem]   bg-slate-700 rounded-t-[0.9rem] " />
+
             <div className="  aspect-[27/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[1024/490] lg:aspect-[1024/490]  min-h-[490px]  ">
               <div className=" flex  relative  flex-col md:flex-row">
                 <div className="   rounded-2xl        min-w-96  ">
@@ -134,10 +174,16 @@ function Home() {
                       Calculations. For best price contact Us
                     </p>
                     <div className="flex   pb-8 pt-5 w-full justify-center">
-                      <button className="bg-green-600 hover:bg-green-700 text-white font-medium md:py-3 md:px-14 px-10 py-3 rounded focus:outline-none focus mr-8">
+                      <button
+                        onClick={HandleReset}
+                        className="bg-green-600 hover:bg-green-700 text-white font-medium md:py-3 md:px-14 px-10 py-3 rounded focus:outline-none focus mr-8"
+                      >
                         Reset
                       </button>
-                      <button className="bg-green-600 hover:bg-green-700 text-white font-medium md:py-3 md:px-14  px-10 py-3 rounded focus:outline-none focus">
+                      <button
+                        onClick={HandleGetRate}
+                        className="bg-green-600 hover:bg-green-700 text-white font-medium md:py-3 md:px-14  px-10 py-3 rounded focus:outline-none focus"
+                      >
                         Get Rate
                       </button>
                     </div>

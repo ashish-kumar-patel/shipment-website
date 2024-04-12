@@ -5,6 +5,7 @@ import GetRate from "./components/GetRate";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import Contact from "./components/ContactUs";
+import Admin from "./components/Admin";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Banner />
       <FAQ/>
+      <Admin/>
       <Contact/>
       <Footer/>
     </div>

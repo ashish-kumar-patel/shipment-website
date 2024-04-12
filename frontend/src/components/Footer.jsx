@@ -10,6 +10,11 @@ const Footer = () => {
   const exploreItems = [ "About Us", "Contact Us","Blogs", "Pricing", "Careers",];
   const informationItems = ["Tracking", "Rate Calculator", "Media", "FAQs", "Glossary",];
 
+  
+  const HandleSubmit=(e)=>{
+    e.preventDefault()
+  }
+
   return (
     <footer className="  bg-[#011F61] text-white   py-4 pt-12">
      <div className="container mx-auto  ">
@@ -89,21 +94,21 @@ const Footer = () => {
             <div className="  lg:mx-0 mx-12 md:mx-0">
               <form className="flex border-slate-400 border-2 rounded-3xl  py-1 overflow-hidden     ">
                 <input   type="email"  placeholder="Email Address"   className="bg-transparent pl-4 outline-none w-full "  />
-                <button  type="submit"  className="bg-blue-800 hover:bg-blue-900 px-4 py-1 -my-1"   >
+                <button onClick={HandleSubmit}  type="submit"  className="bg-blue-800 hover:bg-blue-900 px-4 py-1 -my-1"   >
                  Go
                 </button>
               </form>
             </div>
             <div className="flex gap-4 mt-9  justify-center  ">
               <div>
-                <a href="#">
+                
                   <img src={FooterImage1} alt="image" className="h-10 w-auto " />
-                </a>
+              
               </div>
               <div>
-                <a href="#">
+                
                   <img src={FooterImage2} alt="image" className="h-10 w-auto" />
-                </a>
+                
               </div>
             </div>
           </div>

@@ -6,6 +6,8 @@ import Rabbitlogo from "../assets/Rabbitlogo.png";
 import Portlogo from "../assets/Portlogo.webp";
 import Superlogo from "../assets/Superlogo.webp";
 import Goqilogo from "../assets/Goqilogo.webp";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react"
 
 function Contact() {
   const stats = [
@@ -39,6 +41,31 @@ function Contact() {
     </div>
   );
  
+
+  const HandleSubmit=(e)=>{
+    e.preventDefault()
+  }
+
+  
+useGSAP(() => {
+  gsap.to(".hero", {
+    opacity: 1,
+    delay: 1.2,
+    y:20,
+  });
+  gsap.to(".animate", {
+    opacity: 1,
+    delay: 0.7,
+    y:-20,
+
+  })
+  gsap.to(".logo", {
+    opacity: 1,
+    delay: 1,
+    y:-20,
+
+  })
+}, []);
 
   return (
     <div className=" w-full  bg-white ">
@@ -98,7 +125,7 @@ function Contact() {
               placeholder="Message"
               className="bg-gray-200 rounded-2xl pl-3 pt-2 w-full outline-none"
             ></textarea>
-            <button
+            <button onClick={HandleSubmit}
               type="submit"
               className="w-full text-xl font-medium text-white py-2 rounded-2xl bg-[#FCC537] outline-none"
             >
@@ -110,9 +137,9 @@ function Contact() {
 
       <div className="my-24">
         <div className="mb-12 mt-28 text-center">
-          <h4 className="text-5xl font-bold text-[#011F61]">Our Locations</h4>
+          <h4 className="text-5xl font-bold text-[#011F61] opacity-0 animate">Our Locations</h4>
         </div>
-        <div className="flex flex-wrap justify-center gap-10  px-4 sm:px-10   lg:px-20">
+        <div className="flex flex-wrap justify-center gap-10  px-4 sm:px-10   lg:px-20 opacity-0 animate">
           {locations.map((location, index) => (
             <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5">
               <LocationCard name={location.name} address={location.address} />
@@ -122,7 +149,7 @@ function Contact() {
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 hero opacity-0 ">
           <h2 className="text-[#011F61] text-5xl font-bold mb-8">
             Trusted by thousands
           </h2>
@@ -132,7 +159,7 @@ function Contact() {
         </div>
         <div className="flex flex-wrap justify-center mx-4 mb-24">
           {logos.map((logo) => (
-            <div key={logo.id} className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 p-2">
+            <div key={logo.id} className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 p-2 logo opacity-0">
               <img src={logo.src} alt={logo.alt} className="h-10 w-auto" />
             </div>
           ))}
